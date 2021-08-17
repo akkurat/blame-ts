@@ -72,14 +72,6 @@ npm run test
 
 * [diff](https://github.com/kpdecker/jsdiff) - a javascript text differencing implementation
 
-## Contributing
-
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/hundeloh-consulting/blame-js/tags). 
-
 ## Authors
 
 * **Julian Hundeloh** - *Initial work* - [jaulz](https://github.com/jaulz)
