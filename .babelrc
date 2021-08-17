@@ -1,4 +1,0 @@
-{
-  "presets": ["env"],
-  "plugins": ["typecheck", "syntax-flow", "transform-flow-strip-types"]
-}
