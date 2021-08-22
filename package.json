@@ -5,21 +5,21 @@
   "deprecated": false,
   "description": "blame-js compares an array of source codes and outputs information about where each line originates from.",
   "devDependencies": {
-    "@types/chai": "^4.2.14",
+    "@types/chai": "^4.2.21",
     "@types/diff": "^4.0.2",
-    "@types/mocha": "^8.0.4",
+    "@types/mocha": "^8.2.3",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
     "chai": "^4.2.0",
+    "chai-exclude": "^2.0.3",
     "eslint": "^7.14.0",
     "husky": "^0.13.4",
     "lint-staged": "^3.6.1",
-    "mocha": "^3.5.3",
+    "mocha": "^8.2.3",
     "nyc": "^15.1.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.1.2"
   },
-  "email": "julian@hundeloh-consulting.ch",
   "engines": {
     "node": ">=4.0.0"
   },
@@ -39,7 +39,6 @@
     "dev": "tsc --watch",
     "lint": "eslint . --ext .ts",
     "test": "mocha -r ts-node/register src/*.spec.ts"
-
   },
   "version": "1.1.0"
 }

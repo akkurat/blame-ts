@@ -1,2 +1,3 @@
 coverage
 .nyc*
+node_modules
