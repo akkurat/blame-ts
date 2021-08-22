@@ -13,30 +13,32 @@ class StringExtractor {
 exports.StringExtractor = StringExtractor;
 /**
  *
- * @param snapshots idx=0 => most recent snapshot (what is seen in the editor), idx=length-1 => oldest snapshot
+ * @param snapshots
+ * idx=0 => most recent snapshot (what is seen in the editor), idx=length-1 => oldest snapshot
+ * -> be aware: the the input array will be changed inplace
+ *
  * @param extractor
  */
 function blame(snapshots, extractor) {
     const result = [];
-    let result_ = [];
     const getString = extractor.getCode;
-    const getOrigin = extractor.getOrigin; // idx will be ignored
+    // extractor can also use idx as origin (see StringExtractor)
+    const getOrigin = extractor.getOrigin;
     snapshots.reverse();
     for (const [codeIndex, snapshot] of snapshots.entries()) { //(compareWith: T, codeIndex: number) => {
         const baseCode = codeIndex > 0 ? getString(snapshots[codeIndex - 1]) : '';
         const newerCode = getString(snapshot);
         const diffResults = diff_1.diffLines(baseCode, newerCode, diffOptions);
-        console.log(diffResults);
         // Walk through diff result and check which parts needs to be updated
         let lineIndex = 0;
         for (const [didx, diffResult] of diffResults.entries()) {
             if (diffResult.added) {
                 const lines = diffResult.value.split('\n');
-                for (const [lidx, line] of lines.slice(0, diffResult.count).entries()) {
+                for (const line of lines.slice(0, diffResult.count)) {
                     // Add line to result
                     result.splice(lineIndex, 0, {
                         origin: getOrigin(snapshot, snapshots.length - codeIndex - 1),
-                        value: line.trimRight(),
+                        value: line,
                         diffentry: didx,
                         lineindiff: lineIndex,
                         diff: diffResults
@@ -53,14 +55,11 @@ function blame(snapshots, extractor) {
                 lineIndex += diffResult.count || 0;
             }
         }
-        if (codeIndex < snapshots.length - 1) {
-            result_ = result.slice();
-        }
     }
     return result;
 }
 exports.blame = blame;
 const diffOptions = {
-    newlineIsToken: false,
+    newlineIsToken: false
 };
 //# sourceMappingURL=blame.js.map

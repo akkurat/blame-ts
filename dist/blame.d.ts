@@ -17,7 +17,10 @@ export declare class StringExtractor<T extends string> implements IExtractor<T, 
 }
 /**
  *
- * @param snapshots idx=0 => most recent snapshot (what is seen in the editor), idx=length-1 => oldest snapshot
+ * @param snapshots
+ * idx=0 => most recent snapshot (what is seen in the editor), idx=length-1 => oldest snapshot
+ * -> be aware: the the input array will be changed inplace
+ *
  * @param extractor
  */
 export declare function blame<T, S>(snapshots: Array<T>, extractor: IExtractor<T, S>): Array<IBlameLine<S>>;

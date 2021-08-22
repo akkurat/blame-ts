@@ -76,7 +76,7 @@ describe('blame', () => {
       },
       {
         origin: '2',
-        value: '',
+        value: '        ',
       },
     ])
   })
@@ -129,7 +129,7 @@ describe('blame', () => {
       },
       {
         origin: 2,
-        value: '',
+        value: '      ',
       },
     ])
   })
@@ -191,7 +191,7 @@ describe('blame', () => {
       },
       {
         origin: '2',
-        value: '',
+        value: '        ',
       },
     ])
   })
@@ -203,7 +203,7 @@ describe('blame', () => {
         code: `
           REPORT test2. 
 
-          WRITE 'a'.
+          WRITE 'a'. 
           WRITE 'd'.
         `,
       },
@@ -222,7 +222,7 @@ describe('blame', () => {
         code: `
           REPORT test. 
 
-          WRITE 'a'.
+          WRITE 'a'. 
           WRITE 'c'.
         `,
       },
@@ -245,7 +245,7 @@ describe('blame', () => {
       },
       {
         origin: '0',
-        value: "          WRITE 'a'.",
+        value: "          WRITE 'a'. ",
       },
       {
         origin: '1',
@@ -253,7 +253,7 @@ describe('blame', () => {
       },
       {
         origin: '2',
-        value: '',
+        value: '        ',
       },
     ])
   })
