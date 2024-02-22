@@ -1,9 +1,19 @@
 {
+  "name": "blame-ts",
+  "version": "1.2.0",
+  "author": "Julian Hundeloh",
+  "email": "julian@hundeloh-consulting.ch",
+  "license": "MIT",
+  "contributors": [{
+    "name": "Moritz Vifian", "url": "https://github.com/akkurat"
+  }],
+
   "dependencies": {
     "diff": "^5.0.0"
   },
+
   "deprecated": false,
-  "description": "blame-js compares an array of source codes and outputs information about where each line originates from.",
+  "description": "blame-ts compares an array of source codes and outputs information about where each line originates from.",
   "devDependencies": {
     "@types/chai": "^4.2.21",
     "@types/diff": "^4.0.2",
@@ -23,7 +33,6 @@
   "engines": {
     "node": ">=4.0.0"
   },
-  "license": "MIT",
   "lint-staged": {
     "*.js": [
       "prettier",
@@ -33,12 +42,10 @@
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "name": "blame-ts",
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
     "lint": "eslint . --ext .ts",
     "test": "mocha -r ts-node/register src/*.spec.ts"
-  },
-  "version": "1.2.0"
+  }
 }
